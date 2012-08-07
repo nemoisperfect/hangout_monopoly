@@ -1,0 +1,482 @@
+{
+"go":
+        {
+         "name":"Go",
+         "remarks":"Collect $200 when you pass Go"
+        },
+"brown1":
+        {
+         "name":"Old Kent Road",
+         "shortname":"OK Road",
+         "price":"$60",
+         "rent":"$10",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"communitychest1":
+        {
+         "name":"Community Chest",
+         "remarks":"Get a random card"
+        },         
+"brown2":
+        {
+         "name":"WhiteChapel Road",
+         "shortname":"WC Road",
+         "price":"$60",
+         "rent":"$10",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },         
+"incometax":
+        {
+         "name":"Income Tax",
+         "shortname":"Inc. Tax",
+         "price":"$200",
+         "remarks":"You must pay $200 income tax"
+        },
+"station1":
+        {
+         "name":"Kings Cross Station",
+         "shortname":"Kings",
+         "price":"$200",
+         "rent":"$25",
+         "rent_2":"$50",
+         "rent_3":"$100",
+         "rent_4":"$200",
+         "mortgage":"$100"
+        },     
+"lightblue1":
+        {
+         "name":"Angel Islington",
+         "shortname":"AI Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"chance1":
+        {
+         "name":"Chance",
+         "remarks":"Get a random card"
+        },            
+"lightblue2":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"lightblue3":
+        {
+         "name":"Pentonville Road",
+         "shortname":"AI Road",
+         "price":"$120",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"jail":
+        {
+         "name":"Jail",
+         "remarks":""
+        },         
+"pink1":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"utility1":
+        {
+         "name":"Electric Company",
+         "shortname":"Electric",
+         "price":"$150",
+         "rent":"dice*4",
+         "rent_2":"dice*10",
+         "mortgage":"$75"
+        },         
+"pink2":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"pink3":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"station2":
+        {
+         "name":"Marylbone Station",
+         "shortname":"Marylbone",
+         "price":"$200",
+         "rent":"$25",
+         "rent_2":"$50",
+         "rent_3":"$100",
+         "rent_4":"$200",
+         "mortgage":"$100"
+        },          
+"orange1":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"communitychest2":
+        {
+         "name":"Community Chest",
+         "remarks":"Get a random card"
+        },         
+"orange2":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"orange3":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"freeparking":
+        {
+         "name":"Free Parking",
+         "remarks":"Collect $20 for free parking"
+        },         
+"red1":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"chance2":
+        {
+         "name":"Chance",
+         "remarks":"Get a random card"
+        },         
+"red2":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"red3":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"station3":
+        {
+         "name":"Fenchurch Station",
+         "shortname":"Fenchurch",
+         "price":"$200",
+         "rent":"$25",
+         "rent_2":"$50",
+         "rent_3":"$100",
+         "rent_4":"$200",
+         "mortgage":"$100"
+        },          
+"yellow1":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"yellow2":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"yellow3":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"utility2":
+        {
+         "name":"Water Works",
+         "shortname":"Water",
+         "price":"$150",
+         "rent":"dice*4",
+         "rent_2":"dice*10",
+         "mortgage":"$75"
+        },                  
+"gotojail":
+        {
+         "name":"Go To Jail",
+         "remarks":"Go straight to jail. Do no pass Go. Do not collect $200"
+        },         
+"green1":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"green2":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"communitychest3":
+        {
+         "name":"Community Chest",
+         "remarks":"Get a random card"
+        },         
+"green3":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"station4":
+        {
+         "name":"Liverpool Station",
+         "shortname":"Liverpool",
+         "price":"$200",
+         "rent":"$25",
+         "rent_2":"$50",
+         "rent_3":"$100",
+         "rent_4":"$200",
+         "mortgage":"$100"
+        },   
+"chance3":
+        {
+         "name":"Chance",
+         "remarks":"Get a random card"
+        },               
+"blue1":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         },
+"supertax":
+        {
+         "name":"Super Tax",
+         "shortname":"Super",
+         "price":"$100",
+         "remarks":"You must pay $100 luxury tax"
+        },         
+"blue2":
+        {
+         "name":"Euston Road",
+         "shortname":"Eu Road",
+         "price":"$100",
+         "rent":"$50",
+         "rent_1h":"$50",
+         "rent_2h":"$100",
+         "rent_3h":"$150",
+         "rent_4h":"$200",
+         "rent_hotel":"$250", 
+         "mortgage":"$50",
+         "house_cost":"$50",
+         "houses":"0",
+         "owner":""
+         }                                                                                                                                                                                          
+
+} 
+

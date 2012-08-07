@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Enable And Disable jQuery Event Handlers</title>
+	<style type="text/css">
+ 
+		#modal {
+			background-color: #FAFAFA ;
+			border: 1px solid #C0C0C0 ;
+			display: none ;
+			height: 80px ;
+			left: 50% ;
+			margin: -51px 0px 0px -151px ;
+			padding: 20px 20px 20px 20px ;
+			position: absolute ;
+			text-align: center ;
+			top: 50% ;
+			width: 260px ;
+			z-index: 100 ;
+			}
+ 
+	</style>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+ 
+		jQuery(function( $ ){
+ 
+			// Get a reference to the modal window.
+			var modal = $( "#modal" );
+ 
+ 
+			// This is a variable to determine if the given event
+			// handler is active or disabled. This will be used
+			// by the event handler for conditional execution.
+			var isHandlerActive = false;
+ 
+ 
+			// Bind the trigger link to show the modal window.
+			$( "a" )
+				.attr( "href", "javascript:void( 0 )" )
+				.click(
+					function( event ){
+						// Show modal window.
+						modal.show();
+ 
+						// Now that modal window is shown, we need
+						// to activate its event handler.
+						isHandlerActive = true;
+ 
+						// Prevent default.
+						event.preventDefault();
+					}
+				)
+			;
+ 
+ 
+			// Bind a mouseUp event on the document so that we
+			// can close the modal window when it is open.
+			$( document ).bind(
+				"mousedown",
+				function(){
+					// Check to see if this event handler is
+					// "active". If it is not, then exit.
+					if (!isHandlerActive){
+						return;
+					}
+ 
+					// Log to console for debugging.
+					console.log( "Event handled." );
+ 
+					// Close the modal window.
+					modal.hide();
+ 
+					// Now that the modal window is hidden, we
+					// need to disable its event handler.
+					isHandlerActive = false;
+				}
+			);
+ 
+ 
+			// Bind the mousedown event the modal window so we can
+			// stop it from bubbling up to the document (ie. you
+			// should be able to click IN the modal window without
+			// it closing.
+			modal.bind(
+				"mousedown",
+				function( event ){
+					event.stopPropagation();
+				}
+			);
+ 
+		});
+ 
+	</script>
+</head>
+<body>
+ 
+	<h1>
+		Enable And Disable jQuery Event Handlers
+	</h1>
+ 
+	<p>
+		<a id="trigger">Show modal window</a>
+	</p>
+ 
+	<div id="modal">
+		Hello, this is a modal window.
+	</div>
+ 
+</body>
+</html>

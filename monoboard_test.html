@@ -1,0 +1,1199 @@
+<html>
+<head>
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+<style>
+
+body
+{
+ margin: 0 auto;
+ width:100%;
+ background:#aaaaaa;
+}
+
+p
+{
+ margin:0;
+ font-family:"Arial",Georgia,sans-serif;
+ color:white;
+ text-align: center;
+}
+
+#wrapper
+{
+ width:900px;
+ height:610px;
+ margin: 0 auto;
+ background: #bbbbbb;
+ margin-top:25px;
+}
+
+#board
+{
+ float:left;
+ margin: 0 auto;
+ width:610px;
+ height:610px;
+ //background:#cccccc;
+ //-webkit-transform: rotateY(0deg) rotateX(50deg) rotate(45deg);
+ //-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  //box-shadow: 0px 0px 10px 10px #cccccc; //   6px 6px 5px 5px #cccccc;
+   
+}
+
+.locations-hor
+{
+ margin:0 auto;
+ width:610px;
+ height:80px;
+ //background:purple;
+}
+
+.locations-vert
+{
+ float: left;
+ width: 80px;
+ height: 450px;
+ //background:gray;
+}
+
+#top
+{
+ 
+}
+
+#middle-hor
+{
+}
+
+#left
+{
+ 
+}
+
+#inside
+{
+ float:left;
+ width: 450px;
+ height: 450px;
+ background-color: #994455;
+}
+
+#right
+{
+ 
+}
+
+#bottom
+{
+}
+
+.location_corner
+{
+ float:left;
+ width:80px;
+ height:80px;
+ background-color:#556677; 
+}
+
+.location
+{
+ float:left;
+ width:50px;
+ height:80px;
+ //border:1px solid #eeeeee;
+}
+
+.location_vert
+{
+ width:50px;
+ height:80px;
+ margin-left:15px;
+ //border:1px solid #eeeeee;
+}
+
+.top
+{
+ transform: rotate(180deg);
+-ms-transform: rotate(180deg); /* IE 9 */
+-webkit-transform: rotate(180deg); /* Safari and Chrome */
+-o-transform: rotate(180deg); /* Opera */
+-moz-transform: rotate(180deg); /* Firefox */
+
+}
+
+.left
+{
+ transform: rotate(90deg);
+-ms-transform: rotate(90deg); /* IE 9 */
+-webkit-transform: rotate(90deg); /* Safari and Chrome */
+-o-transform: rotate(90deg); /* Opera */
+-moz-transform: rotate(90deg); /* Firefox */
+}
+
+.right
+{
+ transform: rotate(270deg);
+-ms-transform: rotate(270deg); /* IE 9 */
+-webkit-transform: rotate(270deg); /* Safari and Chrome */
+-o-transform: rotate(270deg); /* Opera */
+-moz-transform: rotate(270deg); /* Firefox */
+}
+
+.name_price
+{
+ margin-top:10px;
+ width:50px;
+ //background-color:#000000;
+}
+
+.build_space
+{
+ width:40px;
+ height:20px;
+ margin:0 auto;
+ background-color:white;
+ //-webkit-transform: rotateY(40deg) rotateX(-20deg);
+}
+
+.built_space_unused
+{
+ width:40px;
+ height:20px;
+} 
+
+.houses_1
+{
+ height:20px;
+ width:10px;
+ background-color:#007744;
+}
+
+.houses_2
+{
+ height:20px;
+ width:20px;
+ background-color:#007744;
+}
+
+.houses_3
+{
+ height:20px;
+ width:30px;
+ background-color:#007744;
+}
+
+.houses_4
+{
+ height:20px;
+ width:40px;
+ background-color:#007744;
+}
+
+.hotel
+{
+ height:20px;
+ width:40px;
+ background-color:red;
+}
+
+
+.piece_space_1
+{
+ width:40px;
+ height:20px;
+ margin:0 auto;
+ //background-color:GREEN;
+ //background-image:url(images/toy02.png);
+ background-size:30px 23px;
+ background-repeat:no-repeat; 
+ background-position:center;
+ //-webkit-transform: rotateY(40deg) rotateX(50deg);
+}
+
+.piece_space_2
+{
+ position:absolute;
+ width:40px;
+ height:20px;
+ //background-color:blue;
+ margin-top:40px;
+ margin-left:5px;
+ background-size:30px 23px;
+ background-repeat:no-repeat; 
+ background-position:center;
+ //-webkit-transform: rotateY(40deg) rotateX(50deg);
+}
+
+.piece_space_3
+{
+ position:absolute;
+ width:40px;
+ height:20px;
+ //background-color:blue;
+ margin-top:60px;
+ margin-left:5px;
+ background-size:30px 23px;
+ background-repeat:no-repeat; 
+ background-position:center;
+ //-webkit-transform: rotateY(40deg) rotateX(50deg);
+}
+
+.piece_space_4
+{
+ position:absolute;
+ width:40px;
+ height:20px;
+ //background-color:blue;
+ margin-top:0px;
+ margin-left:5px;
+ background-size:30px 23px;
+ background-repeat:no-repeat; 
+ background-position:center;
+ //-webkit-transform: rotateY(40deg) rotateX(50deg);
+}
+
+.corner_margin_adjust_piece_spaces
+{
+ margin-left:20px;
+}
+
+.piece1
+{
+ background-image:url(images/gear_wheel.png);
+}
+
+.piece2
+{
+ //background-color:green;
+ background-image:url(images/lock.png);
+}
+
+.piece3
+{
+ background-image:url(images/pensil.png);
+}
+
+.piece4
+{
+ background-image:url(images/usb.png);
+}
+
+.brown
+{
+ background-color:#552222;
+}
+
+.lightblue
+{
+ background-color:#ADD8ef;
+}
+
+.pink
+{
+ background-color: #bb55aa; //#EC098C; #FF0080
+}
+
+.orange
+{
+ background-color:#F37735;
+}
+
+.red
+{
+ background-color:#dd1133; //#D11133;
+}
+
+.yellow
+{
+ background-color:#bbbb77;
+}
+
+.green
+{
+ background-color:#559977;
+}
+
+.blue
+{
+ background-color: #226699; //#111133;#556677;
+}
+
+.communitychest
+{
+ background-color:#eeeeee; 
+ background-image:url('images/chest1.gif');
+ background-size:45px 40px;
+ background-repeat:no-repeat; 
+ background-position:bottom;
+}
+
+.chance
+{
+ background-color:#eeeeee; 
+ background-image:url('images/chance1.gif');
+ background-size:30px 60px;
+ background-repeat:no-repeat; 
+ background-position:center;
+}
+
+.station
+{
+ background-color:#556677; 
+ //background-image:url('images/station1.gif');
+ //background-size:25px 25px;
+ //background-repeat:no-repeat; 
+ //background-position:top;
+ //background-border:1px solid black;
+}
+
+.utilities
+{
+ background-color:#559999;
+ //background-image:url('images/water1.gif');
+ //background-size:30px 30px;
+ //background-repeat:no-repeat;
+ //background-position:top
+}
+
+.taxes
+{
+ background-color:#999999;
+}
+
+#go
+{
+ transform: rotate(0deg);
+-ms-transform: rotate(0deg); /* IE 9 */
+-webkit-transform: rotate(0deg); /* Safari and Chrome */
+-o-transform: rotate(0deg); /* Opera */
+-moz-transform: rotate(0deg); /* Firefox */
+}
+
+#jail
+{
+ transform: rotate(90deg);
+-ms-transform: rotate(90deg); /* IE 9 */
+-webkit-transform: rotate(90deg); /* Safari and Chrome */
+-o-transform: rotate(90deg); /* Opera */
+-moz-transform: rotate(90deg); /* Firefox */
+}
+
+#parking
+{
+ transform: rotate(180deg);
+-ms-transform: rotate(180deg); /* IE 9 */
+-webkit-transform: rotate(180deg); /* Safari and Chrome */
+-o-transform: rotate(180deg); /* Opera */
+-moz-transform: rotate(180deg); /* Firefox */
+}
+
+#gotojail
+{
+ transform: rotate(270deg);
+-ms-transform: rotate(225deg); /* IE 9 */
+-webkit-transform: rotate(270deg); /* Safari and Chrome */
+-o-transform: rotate(225deg); /* Opera */
+-moz-transform: rotate(225deg); /* Firefox */
+}
+
+.location_hovered
+{
+ height:80px;
+ width:50px;
+ //border-left: 1px solid black;
+ //border-right: 1px solid black;
+ //border-bottom: 2px solid black;
+ cursor:pointer;
+ background-color:#000000;
+}
+
+.inside_hovered
+{
+ height:448px;
+ width:448px;
+ background-color:white;
+}
+
+.info
+{
+ height:250px;
+ width:200px;
+ margin:0 auto;
+ margin-top:100px;
+ border:1px dashed black;
+ //background-color:#eeeeee;
+ //-webkit-transform: rotateY(10deg) rotateX(10deg) rotate(-45deg);
+ //-webkit-box-shadow: 3px 3px 5px 6px #aaaaaa;
+  box-shadow:    0px 0px 10px 10px #cccccc; //   6px 6px 5px 5px #cccccc;
+}
+
+
+
+.players_space
+{
+ float:left;
+ height:580px;
+ width:140px;
+ //background-color:green;
+ margin-top:15px;
+}
+
+.player
+{
+ height:280px;
+ width:140px;
+ background-color:#aaaaaa
+}
+
+.player_names
+{
+ font-size: 20px;
+ color:#444444;
+}
+
+.player_ownership
+{
+ height:50px;
+ width:100px;
+ margin:0 auto;
+ background-color:gray;
+}
+
+.board_separator
+{
+ float:left;
+ height:610px;
+ width:5px;
+ background-color:#bbbbbb;
+}
+
+</style>
+
+
+<script type="text/javascript">
+
+var alldata;
+var ids =
+[
+ "go",
+ "brown1",
+ "communitychest1",
+ "brown2",
+ "incometax",
+ "station1",
+ "lightblue1",
+ "chance1",
+ "lightblue2",
+ "lightblue3",
+ "jail",
+ "pink1",
+ "utility1",
+ "pink2",
+ "pink3",
+ "station2",
+ "orange1",
+ "communitychest2",
+ "orange2",
+ "orange3",
+ "parking",
+ "red1",
+ "chance2",
+ "red2",
+ "red3",
+ "station3",
+ "yellow1",
+ "yellow2",
+ "utility2",
+ "yellow3",
+ "gotojail",
+ "green1",
+ "green2",
+ "communitychest3",
+ "green3",
+ "station4",
+ "chance3",
+ "blue1",
+ "supertax",
+ "blue2"
+];
+
+var die = new Array;
+die[1] = new Image;
+die[1].src = 'images/dice_1.gif';
+die[2] = new Image;
+die[2].src = 'images/dice_2.gif';
+die[3] = new Image;
+die[3].src = 'images/dice_3.gif';
+die[4] = new Image;
+die[4].src = 'images/dice_4.gif';
+die[5] = new Image;
+die[5].src = 'images/dice_5.gif';
+die[6] = new Image;
+die[6].src = 'images/dice_6.gif';
+ 
+var position_p1 = 0;
+
+
+
+function showinfo(location_id)
+{
+                var colour_class = location_id.slice(0,-1);
+                $("#"+location_id).addClass('location_hovered');
+                //$("#dice_space").hide();
+                $("#inside").addClass('inside_hovered');//$("#inside").addClass(colour_class);
+                
+                if($("#"+location_id).is('.station'))
+                {
+                        $("#inside").html("<div class='info "+colour_class+"'><br><p align='center'>"+alldata[location_id].name+"</p><p align='center'>Price : "+alldata[location_id].price+"</p><hr><br><p align='center'>Rent : "+alldata[location_id].rent+"</p><p align='center'>With 2 stations : "+alldata[location_id].rent_2+"</p><p align='center'>With 3 stations : "+alldata[location_id].rent_3+"</p><p align='center'>With 4 stations : "+alldata[location_id].rent_4+"</p><p align='center'>Mortgage Value : "+alldata[location_id].mortgage+"</p></div>"); 
+                }
+                
+                else if($("#"+location_id).is('.utilities'))
+                {
+                        $("#inside").html("<div class='info utilities'><br><p align='center'>"+alldata[location_id].name+"</p><p align='center'>Price : "+alldata[location_id].price+"</p><hr><p align='center'>Rent : "+alldata[location_id].rent+"</p><p align='center'>With 2 utilities : "+alldata[location_id].rent_2+"</p><p align='center'>Mortgage Value : "+alldata[location_id].mortgage+"</p></div>"); 
+                }
+                
+                else if($("#"+location_id).is('.taxes'))
+                {
+                        $("#inside").html("<div class='info taxes'><br><p align='center'>"+alldata[location_id].name+"</p><hr><p align='center'>"+alldata[location_id].remarks+"</p></div>");
+                }
+                
+                else if($("#"+location_id).is('.communitychest'))
+                {
+                        $("#inside").html("<div class='info communitychest' ><br><p style='color:black;' align='center'>"+alldata[location_id].name+"</p><hr><p style='color:black;' align='center'>"+alldata[location_id].remarks+"</p></div>");
+                }
+                
+                else if($("#"+location_id).is('.chance'))
+                {
+                        $("#inside").html("<div class='info chance' ><br><p style='color:black;' align='center'>"+alldata[location_id].name+"</p><hr><p style='color:black;' align='center'>"+alldata[location_id].remarks+"</p></div>");
+                }
+                
+                else
+                {
+                        $("#inside").html("<div class='info "+colour_class+"'><br><p align='center'>"+alldata[location_id].name+"</p><p align='center'>Price : "+alldata[location_id].price+"</p><hr><p align='center'>Rent : "+alldata[location_id].rent+"</p><p align='center'>With 1 house : "+alldata[location_id].rent_1h+"</p><p align='center'>With 2 houses : "+alldata[location_id].rent_2h+"</p><p align='center'>With 3 houses : "+alldata[location_id].rent_3h+"</p><p align='center'>With 4 houses : "+alldata[location_id].rent_4h+"</p><p align='center'>With 1 hotel : "+alldata[location_id].rent_hotel+"</p><p align='center'>Mortgage Value : "+alldata[location_id].mortgage+"</p></div>"); 
+                //location_id.name  .price .rent .rent_1h .rent_2h .rent_3h .rent_4h .rent_hotel .mortgage
+                }
+}
+
+function hideinfo(location_id)
+{
+                var colour_class = location_id.slice(0,-1);
+                $("#"+location_id).removeClass('location_hovered');
+                $("#inside").removeClass('inside_hovered');
+                $(".info").removeClass(colour_class);
+                $(".info").hide();
+                //$("#dice_space").show();
+               // alert(location_id);
+                
+}
+
+function build(location_id, what)
+{
+                $("#"+location_id).find('div.build_space').addClass(what);
+}
+
+function build_appropriately(location_id)
+{
+        var i = alldata[location_id].houses;
+        if(i>=5){alert("no more. enough.");}
+        //var colour_class = location_id.slice(0,-1);
+        var what;
+        if(i==0){what = "houses_1"; build(location_id,what); alldata[location_id].houses=1;}
+        else if(i==1){what = "houses_2"; build(location_id,what); alldata[location_id].houses=2;}
+        else if(i==2){what = "houses_3"; build(location_id,what); alldata[location_id].houses=3;}
+        else if(i==3){what = "houses_4"; build(location_id,what); alldata[location_id].houses=4;}
+        else if(i==4){what = "hotel"; build(location_id,what); alldata[location_id].houses=5;}        
+}
+
+function animateRoll(times)
+{
+         times = times || 1;
+         
+         var roll = generateRoll();
+         drawRoll(roll[0], roll[1]);
+         
+         if (times > 10)
+         {
+               checkRoll(roll[0], roll[1]);
+               return;
+         }
+         
+         setTimeout('animateRoll(' + (times + 1) + ')', 200);
+}
+
+function generateRoll()
+{
+    return [ Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1 ];
+}
+
+function drawRoll(die1, die2)
+{
+    document.getElementById('die1').innerHTML = '<img src="images/dice_' + die1 +'.gif" style="height:50px;width:50px;">';
+    document.getElementById('die2').innerHTML = '<img src="images/dice_' + die2 +'.gif" style="height:50px;width:50px;">';
+}
+
+function checkRoll(die1, die2)
+{
+    var total = die1 + die2;
+    //document.getElementById("total").innerHTML = "= &nbsp;&nbsp;&nbsp;"+total;
+    move_to_position(total);
+}      
+
+function move_to_position(total)
+{
+               var newposition_p1=position_p1+total;
+               newposition_p1=newposition_p1%40;
+               $("#"+ids[position_p1]).find('div.piece_space_1').removeClass('piece2');
+             
+              // var colour_class = ids[position_p1].slice(0,-1);
+              // hideinfo(ids[position_p1], colour_class);      //hiding info when u move away from location
+            
+             //  for(i=position_p1;i<=newposition_p1;i++)
+             //  {
+                        //setTimeout(function(){alert("Hello")},3000);
+              //          $("#"+ids[i]).find('div.piece_space').css('visibility','hidden'); //hiding the old
+                      //  $("#"+ids[i+1]).find('div.piece_space').css('visibility','visible'); //showing at the new
+             //  }
+              
+               $("#"+ids[newposition_p1]).find('div.piece_space_1').addClass('piece2'); //showing at the new
+               
+              //to showinfo when u land on a location
+               //showinfo(ids[newposition_p1]);
+               //$("#dice_space").show();
+             
+               position_p1 = newposition_p1;
+}
+
+// state setting.
+var state = new Array();
+function init_states()
+{
+  set_hover("active");
+  set_buildhouse("inactive");
+  alert('initial states set');
+}
+
+function set_buildhouse(this_state)
+{
+  state["buildhouse"] = this_state;
+}
+
+function set_hover(this_state)
+{
+  state["hover"] = this_state;
+}
+
+function get_state(of_this)
+{
+  return state[of_this];
+}
+
+//jquery events
+$(document).ready(function() {
+        
+        init_states();
+
+        $.ajax({
+          url:'data/location_data.json',
+          dataType: 'json',
+          success: function(data) {
+                alldata = data;
+          },
+          async: false
+        });
+        
+        $("#go").find('div.piece_space_1').addClass('piece2');
+        $("#go").find('div.piece_space_2').addClass('piece1');
+        $("#go").find('div.piece_space_3').addClass('piece3');
+        $("#go").find('div.piece_space_4').addClass('piece4');
+        
+        $(".location").mouseover(function () {
+          if(get_state("hover")=="active")
+          {
+               var location_id = this.id;
+               showinfo(location_id);
+          }
+        });
+        $(".location").mouseleave(function () {
+               var location_id = this.id;
+               hideinfo(location_id);              
+        });
+        $(".location_vert").mouseover(function () {
+               var location_id = this.id;
+               showinfo(location_id);
+        });
+        $(".location_vert").mouseleave(function () {
+               var location_id = this.id;
+               hideinfo(location_id);
+        });
+        
+        //var houses = new Array();
+        // houses["brown1"]=0;houses["brown2"]=0;houses["lightblue1"]=0;houses["lightblue2"]=0;houses["lightblue3"]=0;
+        //added number of houses and owner to - alldata(local version of all board data in json). so no need for above 2 lines.
+        $(".location").click(function () {
+               //check if allowed to build. if all 3 props owned then yes then proceed. else showinfo(). also make sure the diff in no of houses between any 2 of the 3 props is never more than 1.
+               var location_id = this.id;
+               build_appropriately(location_id);
+        });
+        
+        $(".location_vert").click(function () {
+               //check if allowed to build. if all 3 props owned then yes then proceed. else showinfo(). also make sure the diff in no of houses between any 2 of the 3 props is never more than 1.
+               var location_id = this.id;
+               build_appropriately(location_id);
+        });
+         
+     
+});
+</script>
+</head>
+
+<body>
+
+
+<div id="wrapper" >
+        <div class = "players_space" id="players_left">
+                <div class="player" id="p2">
+                        <br>
+                        <p>P2</p>
+                        <hr>
+                        <p class="player_names" id="p2_name">Shikhar</p>
+                        <hr>
+                        <p id="p2_money">$1500</p>
+                        <hr>
+                        <p>Owned</p>
+                        <br>
+                        <table class="player_ownership" id="p2_ownership">
+                                <tr><td><p style="text-align:left">Titles</p></td><td id="p2_titles"><p style="text-align:right">3</p></td></tr>
+                                <tr><td><p style="text-align:left">Stations</p></td><td id="p2_stations"><p style="text-align:right">2</p></td></tr>
+                                <tr><td><p style="text-align:left">Utilities</p></td><td id="p2_utilities"><p style="text-align:right">1</p></td></tr>
+                        </table>                     
+                </div>
+                <hr/>
+                <div class="player" id="p1">
+                        <br>
+                        <p>P1</p>
+                        <hr>
+                        <p class="player_names" id="p1_name">Aayush</p>
+                        <hr>
+                        <p id="p1_money">$1500</p>
+                        <hr>
+                        <p>Owned</p>
+                        <br>
+                        <table class="player_ownership" id="p1_ownership">
+                                <tr><td><p style="text-align:left">Titles</p></td><td id="p1_titles"><p style="text-align:right">3</p></td></tr>
+                                <tr><td><p style="text-align:left">Stations</p></td><td id="p1_stations"><p style="text-align:right">2</p></td></tr>
+                                <tr><td><p style="text-align:left">Utilities</p></td><td id="p1_utilities"><p style="text-align:right">1</p></td></tr>
+                        </table>                     
+                </div>
+        </div>      
+        <div class="board_separator"></div>  
+        
+        <div id="board">
+                <div id="top" class="locations-hor" >
+                        <div class="location_corner" id="parking">
+                                <div class="piece_space_2 corner_margin_adjust_piece_spaces"></div>
+                                <div class="piece_space_3 corner_margin_adjust_piece_spaces"></div>
+                                <div class="piece_space_4 corner_margin_adjust_piece_spaces"></div>
+                                <div class="built_space_unused"></div>
+                                <div class="piece_space_1"></div>
+                                <p style="" align="center">Free Parking</p>
+                        </div>
+                        <div class="location top red" id="red1">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Strand</font><br/><font size=1>$220</font></p> 
+                        </div>
+                        <div class="location top chance" id="chance2">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="built_space_unused"></div><!--not used-->
+                                <!insert background image of question mark instead-->
+                                <div class="piece_space_1"></div>
+                               <!-- <p align="center"><font size=1>P. Road</font><br/><font size=1>$100</font></p> -->
+                        </div>
+                        <div class="location top red" id="red2">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Fleet St.</font><br/><font size=1>$220</font></p> 
+                        </div>                     
+                        <div class="location top red" id="red3">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Traf. Sq.</font><br/><font size=1>$240</font></p> 
+                        </div>
+                        <div class="location top station" id="station3">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="built_space_unused"></div><!--not used-->
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Fenchurch</font><br/><font size=1>$200</font></p> 
+                        </div>
+                        <div class="location top yellow" id="yellow1">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Leicester</font><br/><font size=1>$260</font></p> 
+                        </div>                     
+                        <div class="location top yellow" id="yellow2">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Coventry</font><br/><font size=1>$260</font></p> 
+                        </div>
+                        <div class="location top utilities" id="utility2">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="built_space_unused"></div><!--not used-->
+                                <!insert background image of waterworks instead-->
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Water</font><br/><font size=1>$150</font></p>
+                        </div>
+                        <div class="location top yellow" id="yellow3">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Piccadilly</font><br/><font size=1>$280</font></p> 
+                        </div>
+                        <div class="location_corner" id="gotojail">
+                                <div class="piece_space_2 corner_margin_adjust_piece_spaces"></div>
+                                <div class="piece_space_3 corner_margin_adjust_piece_spaces"></div>
+                                <div class="piece_space_4 corner_margin_adjust_piece_spaces"></div>
+                                <div class="built_space_unused"></div>
+                                <div class="piece_space_1"></div>
+                                <p style="margin-top:10px" align="center">Go To Jail</p>
+                        </div>
+                        
+                        <div style="clear:both"></div>
+                </div>
+                <div id="middle-hor">
+                        <div class="locations-vert" id="left">
+                                <div class="location_vert left orange" id="orange3" style="margin-top:-15px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Vine St.</font><br/><font size=1>$200</font></p> 
+                                </div>
+                                <div class="location_vert left orange" id="orange2" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Marl st.</font><br/><font size=1>$180</font></p> 
+                                </div>
+                                <div class="location_vert left communitychest" id="communitychest2" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="built_space_unused"></div><!--not used-->
+                                        <div class="piece_space_1"></div>
+                                       <!-- <p align="center"><font size=1>P. Road</font><br/><font size=1>$100</font></p> -->
+                                </div>
+                                 <div class="location_vert left orange" id="orange1" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Bow St.</font><br/><font size=1>$180</font></p> 
+                                </div>
+                                <div class="location_vert left station" id="station2" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="built_space_unused"></div><!--not used-->
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Marylbone</font><br/><font size=1>$200</font></p> 
+                                </div>
+                                <div class="location_vert left pink" id="pink3" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>NL Ave</font><br/><font size=1>$160</font></p> 
+                                </div>
+                                <div class="location_vert left pink" id="pink2" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Whitehall</font><br/><font size=1>$140</font></p> 
+                                </div>
+                                <div class="location_vert left utilities" id="utility1" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="built_space_unused"></div><!--not used-->
+                                        <!insert background image of Electric works instead-->
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Electric</font><br/><font size=1>$150</font></p>
+                                </div>
+                                 <div class="location_vert left pink" id="pink1" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Pall Mall</font><br/><font size=1>$140</font></p> 
+                                </div>
+                        </div>
+                        <div id="inside">
+                                 <div id="dice_space" style="margin:0 auto;margin-top:20px;height:auto; width:100px;">
+                                        <div id="die1" style="width:50px;height:50px;float:left"></div>
+                                        <div id="die2" style="width:50px;height:50px;float:left"></div>
+                                        <hr/>
+                                        <!--<p id="total" style="width:100px;"></p>-->
+                                        <input type="button" value="Roll" onClick='animateRoll()' style="width:100px;height:30px;width:98px;"/>
+                                        <hr/>
+                                </div>
+                                <div id="controls" style="margin:0 auto;margin-top:50px;height:30px;width:400px;">
+                                        <div id="trade_button_space" style="float:left;height:auto; width:100px;">
+                                                <input type="button" value="Trade" id="trade_button" style="height:30px;width:98px;color:white;background-color:black;"/>
+                                        </div>
+                                        <div id="mortgage_button_space" style="float:left;height:auto; width:100px;">
+                                                <input type="button" value="Mortgage" id="mortgage_button" style="height:30px;width:98px;color:white;background-color:black;"/>
+                                        </"/>
+                                        </div>
+                                        <div id="unmortgage_button_space" style="float:left;height:auto; width:100px;">
+                                                <input type="button" value="Unmortgage" id="unmortgage_button" style="height:30px;width:98px;color:white;background-color:black;"/>
+                                        </"/>
+                                        </div>
+                                        <div id="build_button_space" style="float:left;height:auto; width:100px;">
+                                                <input type="button" value="Build" id="build_button" style="height:30px;width:98px;color:white;background-color:black;"/>
+                                        </"/>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="locations-vert" id="right">
+                                <div class="location_vert right green" id="green1" style="margin-top:-15px;">
+                                  <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Regent</font><br/><font size=1>$300</font></p> 
+                                </div>
+                                <div class="location_vert right green" id="green2" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Oxford</font><br/><font size=1>$300</font></p> 
+                                </div>
+                                <div class="location_vert right communitychest" id="communitychest3" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="built_space_unused"></div><!--not used-->
+                                        <div class="piece_space_1"></div>
+                                       <!-- <p align="center"><font size=1>P. Road</font><br/><font size=1>$100</font></p> -->
+                                </div>
+                                 <div class="location_vert right green" id="green3" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Bond</font><br/><font size=1>$320</font></p> 
+                                </div>
+                                <div class="location_vert right station" id="station4" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="built_space_unused"></div><!--not used-->
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Liverpool</font><br/><font size=1>$200</font></p> 
+                                </div>
+                                <div class="location_vert right chance" id="chance3" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="built_space_unused"></div><!--not used-->
+                                        <div class="piece_space_1"></div>
+                                       <!-- <p align="center"><font size=1>P. Road</font><br/><font size=1>$100</font></p> -->
+                                </div>
+                                <div class="location_vert right blue" id="blue1" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>P Lane</font><br/><font size=1>$350</font></p> 
+                                </div>
+                                <div class="location_vert right taxes" id="supertax" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="built_space_unused"></div><!--not used-->
+                                        <div class="piece_space_1"></div>
+                                        <p align="center"><font size=1>Sup Tax</font><br/><font size=1>$200</font></p> 
+                                </div>
+                                <div class="location_vert right blue" id="blue2" style="margin-top:-30px;">
+                                        <div class="piece_space_2"></div>
+                                        <div class="piece_space_3"></div>
+                                        <div class="piece_space_4"></div>
+                                        <div class="build_space"></div>
+                                        <div class="piece_space_1"></div>
+                                        <p class="name_price" align="center"><font size=1>Mayfair</font><br/><font size=1>$400</font></p> 
+                                </div>
+                        </div>
+                        
+                        <div style="clear:both"></div>
+                </div>
+                <div id="bottom" class="locations-hor" >
+                        <div class="location_corner" id="jail">
+                                <div class="piece_space_2 corner_margin_adjust_piece_spaces"></div>
+                                <div class="piece_space_3 corner_margin_adjust_piece_spaces"></div>
+                                <div class="piece_space_4 corner_margin_adjust_piece_spaces"></div>
+                                <div class="built_space_unused"></div>
+                                <div class="piece_space_1"></div>
+                                <p style="margin-top:10px" align="center">Jail</p>
+                        </div>
+                        <div class="location lightblue" id="lightblue3">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>P. Road</font><br/><font size=1>$120</font></p> 
+                        </div>
+                        <div class="location lightblue" id="lightblue2">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>E. Road</font><br/><font size=1>$100</font></p> 
+                        </div>                       
+                        <div class="location chance" id="chance1">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="built_space_unused"></div><!--not used-->
+                                <div class="piece_space_1"></div>
+                               <!-- <p align="center"><font size=1>P. Road</font><br/><font size=1>$100</font></p> -->
+                        </div>
+                        <div class="location lightblue" id="lightblue1">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Angel I.</font><br/><font size=1>$100</font></p> 
+                        </div>
+                        <div class="location station" id="station1">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="built_space_unused"></div><!--not used-->
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>Kings</font><br/><font size=1>$200</font></p> 
+                        </div>
+                        <div class="location taxes" id="incometax">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="built_space_unused"></div><!--not used-->
+                                <div class="piece_space_1"></div>
+                                <p align="center"><font size=1>Inc. Tax</font><br/><font size=1>$200</font></p> 
+                        </div>
+                        <div class="location brown" id="brown2">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>WCR</font><br/><font size=1>$60</font></p> 
+                        </div>
+                        <div class="location communitychest" id="communitychest1">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="built_space_unused"></div><!--not used-->
+                                <div class="piece_space_1"></div>
+                               <!-- <p align="center"><font size=1>P. Road</font><br/><font size=1>$100</font></p> -->
+                        </div>
+                         <div class="location brown" id="brown1">
+                                <div class="piece_space_2"></div>
+                                <div class="piece_space_3"></div>
+                                <div class="piece_space_4"></div>
+                                <div class="build_space"></div>
+                                <div class="piece_space_1"></div>
+                                <p class="name_price" align="center"><font size=1>OK Road</script></font><br/><font size=1>$60</font></p> 
+                        </div>
+                        <div class="location_corner" id="go">
+                                <div class="piece_space_2 corner_margin_adjust_piece_spaces"></div>
+                                <div class="piece_space_3 corner_margin_adjust_piece_spaces"></div>
+                                <div class="piece_space_4 corner_margin_adjust_piece_spaces"></div>
+                                <div class="built_space_unused"></div>
+                                <div class="piece_space_1"></div>
+                                <p style="margin-top:10px" align="center">Go</p> 
+                        </div>                                       
+                        <div style="clear:both"></div>
+                </div> 
+        </div>
+
+        <div class="board_separator"></div>  
+        <div class = "players_space" id="players_right">
+                <div class="player" id="p3">
+                        <br>
+                        <p>P3</p>
+                        <hr>
+                        <p class="player_names" id="p3_name">Sahil</p>
+                        <hr>
+                        <p id="p3_money">$1500</p>
+                        <hr>
+                        <p>Owned</p>
+                        <br>
+                        <table class="player_ownership" id="p3_ownership">
+                                <tr><td><p style="text-align:left">Titles</p></td><td id="p3_titles"><p style="text-align:right">3</p></td></tr>
+                                <tr><td><p style="text-align:left">Stations</p></td><td id="p3_stations"><p style="text-align:right">2</p></td></tr>
+                                <tr><td><p style="text-align:left">Utilities</p></td><td id="p3_utilities"><p style="text-align:right">1</p></td></tr>
+                        </table>                     
+                </div>
+                <hr/>
+                <div class="player" id="p4">
+                        <br>
+                        <p>P4</p>
+                        <hr>
+                        <p class="player_names" id="p4_name">Taruni</p>
+                        <hr>
+                        <p id="p4_money">$1500</p>
+                        <hr>
+                        <p>Owned</p>
+                        <br>
+                        <table class="player_ownership" id="p4_ownership">
+                                <tr><td><p style="text-align:left">Titles</p></td><td id="p4_titles"><p style="text-align:right">3</p></td></tr>
+                                <tr><td><p style="text-align:left">Stations</p></td><td id="p4_stations"><p style="text-align:right">2</p></td></tr>
+                                <tr><td><p style="text-align:left">Utilities</p></td><td id="p4_utilities"><p style="text-align:right">1</p></td></tr>
+                        </table>                     
+                </div>
+        </div>      
+</div>
+
+</body>
+</html>
