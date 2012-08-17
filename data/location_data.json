@@ -41,7 +41,7 @@
          "houses":"0",
          "owner":""
          },         
-"incometax":
+"taxes1":
         {
          "name":"Income Tax",
          "shortname":"Inc. Tax",
@@ -115,7 +115,7 @@
 "jail":
         {
          "name":"Jail",
-         "remarks":""
+         "remarks":"Pay 50 or roll for doubles"
         },         
 "pink1":
         {
@@ -133,7 +133,7 @@
          "houses":"0",
          "owner":""
          },
-"utility1":
+"utilities1":
         {
          "name":"Electric Company",
          "shortname":"Electric",
@@ -238,7 +238,7 @@
          "houses":"0",
          "owner":""
          },
-"freeparking":
+"parking":
         {
          "name":"Free Parking",
          "remarks":"Collect $20 for free parking"
@@ -355,7 +355,7 @@
          "houses":"0",
          "owner":""
          },
-"utility2":
+"utilities2":
         {
          "name":"Water Works",
          "shortname":"Water",
@@ -454,7 +454,7 @@
          "houses":"0",
          "owner":""
          },
-"supertax":
+"taxes2":
         {
          "name":"Super Tax",
          "shortname":"Super",
