@@ -32,7 +32,8 @@
 			// This is a variable to determine if the given event
 			// handler is active or disabled. This will be used
 			// by the event handler for conditional execution.
-			var isHandlerActive = false;
+		//	var isHandlerActive = false;
+			var form_active = 1;
  
  
 			// Bind the trigger link to show the modal window.
@@ -45,8 +46,8 @@
  
 						// Now that modal window is shown, we need
 						// to activate its event handler.
-						isHandlerActive = true;
- 
+					//	isHandlerActive = true;
+ 						form_active = 0;
 						// Prevent default.
 						event.preventDefault();
 					}
@@ -61,19 +62,25 @@
 				function(){
 					// Check to see if this event handler is
 					// "active". If it is not, then exit.
-					if (!isHandlerActive){
+				/*	if (!isHandlerActive){
 						return;
 					}
- 
+ 				*/
+ 					if(form_active==0)
+ 					{
+ 						alert("you cant anymore");
+ 						return;
+ 					}
+ 						
 					// Log to console for debugging.
 					console.log( "Event handled." );
  
 					// Close the modal window.
-					modal.hide();
+				//modal.hide();
  
 					// Now that the modal window is hidden, we
 					// need to disable its event handler.
-					isHandlerActive = false;
+				//	isHandlerActive = false;
 				}
 			);
  
@@ -101,6 +108,7 @@
  
 	<p>
 		<a id="trigger">Show modal window</a>
+		<input type="radio"/>select this
 	</p>
  
 	<div id="modal">

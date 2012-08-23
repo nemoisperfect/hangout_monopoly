@@ -104,7 +104,16 @@ p
  height:80px;
  //border:1px solid #eeeeee;
 }
-
+/*
+.bought
+{
+ background-position: center;
+ background-size: 40px 40px;
+ background-repeat: no-repeat;
+ opacity:1.0;
+ background-image:url('images/lock.png');
+}
+*/
 .location:hover
 {
  height:80px;
@@ -289,7 +298,8 @@ p
 
 .piece1
 {
- background-image:url(images/gear_wheel.png);
+ //opacity:0.3;
+ background-image:url(images/hat_wizard.png);
 }
 
 .piece2
@@ -300,7 +310,7 @@ p
 
 .piece3
 {
- background-image:url(images/pensil.png);
+ background-image:url(images/donatelo.png);
 }
 
 .piece4
@@ -436,7 +446,7 @@ p
 #dice_space
 {
  margin:0 auto;
- margin-top:100px;
+ margin-top:20px;
  height:auto; 
  width:100px;
  display:none;
@@ -478,7 +488,7 @@ p
  height:250px;
  width:200px;
  margin:0 auto;
- margin-top:100px;
+ margin-top:30px;
  border:1px dashed black;
  //background-color:#eeeeee;
  //-webkit-transform: rotateY(10deg) rotateX(10deg) rotate(-45deg);
@@ -508,7 +518,7 @@ p
  margin-top:80px;
  height:300px;
  width:300px;
- background-color:orange;
+ background-color:white;
  display:none;
 }
 
@@ -537,6 +547,17 @@ p
  width:400px;
  display:none;
 }
+
+#timer_space
+{
+ margin:0 auto;
+ //background-color:black;
+ height:25px;
+ width:70px; 
+ margin-top:50px;
+ display:none;
+}
+
 .controls_button_space
 {
  float:left;
@@ -578,6 +599,7 @@ p
  background-position: left top;
  background-size: 50px 50px;
  background-repeat: no-repeat;
+ opacity:1.0;
 }
 
 .player_names
@@ -665,7 +687,6 @@ die[5] = new Image;
 die[5].src = 'images/dice_5.gif';
 die[6] = new Image;
 die[6].src = 'images/dice_6.gif';
-
 
 function showinfo(location_id)
 {
@@ -890,7 +911,7 @@ function set_pieces_at_go()
 
 
 //must make states player specific
-var timer;
+
 var whose_turn_is_it;
 var turn_order = new Array();
 var player_die_total = new Array();
@@ -950,6 +971,7 @@ function choose_pieces()
         //alert(p[i].piece);
         $("#p"+(i+1)).addClass("piece"+(i+1));
     }
+    $("#begin_game_button").show();
 }
 
 function begin_game()   //call after player order decided and pieces chosen.
@@ -961,18 +983,56 @@ function begin_game()   //call after player order decided and pieces chosen.
 
 function begin_turn(x)   
 {
+    $("#timer_space").show();
+    start_timer();
     state_before_roll(0);
     piece_to_move = "piece"+x;
+    
+    $("#p"+x).css("background-color","#994455");
+    $("#p"+x+"_name").css("font-size","30px");
+    $("#p"+x+"_name").css("color","white");
     alert("Player "+x+" : Your turn");
 }
 
 function end_turn(x)   
 {
-    alert("Player "+x+" : Turn over");          
+    //end_timer();
+    $("#timer_space").hide();
+    $("#p"+x).css("background-color","#aaaaaa");
+    $("#p"+x+"_name").css("font-size","20px");
+    $("#p"+x+"_name").css("color","#444444");     
     whose_turn_is_it+=1;
     if(whose_turn_is_it>4) whose_turn_is_it=1;  //turns work
     begin_turn(whose_turn_is_it);
 }
+
+
+var seconds;
+var minutes;
+var timer_counter;
+
+function count_down()
+{
+    if (minutes == 0 && seconds == 0)
+    {
+     clearInterval(timer_counter);
+     alert("time up");
+     end_turn(whose_turn_is_it);
+    }
+
+    if(seconds == 00) {seconds = 59;minutes=minutes-1;}
+    else {seconds=seconds-1;}
+    document.getElementById("timer").innerHTML=minutes+":"+seconds;
+}
+
+function start_timer()
+{
+    seconds = 00;
+    minutes = 2;
+    timer_counter=setInterval(count_down, 1000); 
+//alert("3 mins to go");
+}
+
 
 // states
 var allow = new Array();
@@ -981,7 +1041,7 @@ function init_states()
   allow_hover("false");
   allow_build("false");
   allow_select("false");
-  //$("#dice_space").show();
+  //$("#begin_game_button").show();
   $("#roll_all_players").show();
   find_player_order();
 
@@ -1244,7 +1304,7 @@ $(document).ready(function() {
             state_after_buy();
         });
 
-        $("#go").click(function () {
+        $("#begin_game_button").click(function () {
             begin_game();
         });
      
@@ -1465,41 +1525,46 @@ $(document).ready(function() {
                                 </div>
                         </div>
                         <div id="inside">
-                                <div class="inner_console" id="roll_all_players">
+                                <div id="timer_space">
+                                        <p id="timer" style="font-size:20px">2:00</p>
+                                </div>
+                                <div class="inner_console" id="roll_all_players" style="margin-top:60px;background-color:#994455;">
                                     <table style="border-spacing:0;height:300px;width:300px;margin:0 auto;">
                                         <tr style="height:75px;width:300px;">
                                             <td style="height:50px;width:97px;"><p>Aayush</p></td>
                                             <td style="height:50px;width:200px;">
                                                 <div id="p1_piece" style="width:50px;height:50px;float:left"></div>
-                                                <div id="p1_die1" style="background-color:blue;width:50px;height:50px;float:left"></div>
-                                                <div id="p1_die2" style="background-color:blue;width:50px;height:50px;float:left"></div>
+                                                <div id="p1_die1" style="width:50px;height:50px;float:left"></div>
+                                                <div id="p1_die2" style="width:50px;height:50px;float:left"></div>
                                             </td>
                                         </tr>
                                         <tr style="height:75px;width:300px;">
                                             <td style="height:50px;width:97px;"><p>Shikhar</p></td>
                                             <td style="height:50px;width:200px;">
                                                 <div id="p2_piece" style="width:50px;height:50px;float:left"></div>
-                                                <div id="p2_die1" style="background-color:blue;width:50px;height:50px;float:left"></div>
-                                                <div id="p2_die2" style="background-color:blue;width:50px;height:50px;float:left"></div>
+                                                <div id="p2_die1" style="width:50px;height:50px;float:left"></div>
+                                                <div id="p2_die2" style="width:50px;height:50px;float:left"></div>
                                             </td>
                                         </tr>
                                         <tr style="height:75px;width:300px;">
                                             <td style="height:50px;width:97px;"><p>Sahil</p></td>
                                             <td style="height:50px;width:200px;">
                                                 <div id="p3_piece" style="width:50px;height:50px;float:left"></div>
-                                                <div id="p3_die1" style="background-color:blue;width:50px;height:50px;float:left"></div>
-                                                <div id="p3_die2" style="background-color:blue;width:50px;height:50px;float:left"></div>
+                                                <div id="p3_die1" style="width:50px;height:50px;float:left"></div>
+                                                <div id="p3_die2" style="width:50px;height:50px;float:left"></div>
                                             </td>
                                         </tr>
                                         <tr style="height:75px;width:300px;">
                                             <td style="height:50px;width:97px;"><p>Taruni</p></td>
                                             <td style="height:50px;width:200px;">
                                                 <div id="p4_piece" style="width:50px;height:50px;float:left"></div>
-                                                <div id="p4_die1" style="background-color:blue;width:50px;height:50px;float:left"></div>
-                                                <div id="p4_die2" style="background-color:blue;width:50px;height:50px;float:left"></div>
+                                                <div id="p4_die1" style="width:50px;height:50px;float:left"></div>
+                                                <div id="p4_die2" style="width:50px;height:50px;float:left"></div>
                                             </td>
                                         </tr>
                                     </table>
+                                    <input type="button" id="begin_game_button" style="display:none;height:50px;width:300px;" value="Begin Game"/>
+                                
                                 </div> 
                                 <div class="info title" style="display:none">
                                         <br>
