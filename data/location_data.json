@@ -57,7 +57,8 @@
          "rent_2":"$50",
          "rent_3":"$100",
          "rent_4":"$200",
-         "mortgage":"$100"
+         "mortgage":"$100",
+         "owner":""
         },     
 "lightblue1":
         {
@@ -140,7 +141,8 @@
          "price":"$150",
          "rent":"dice*4",
          "rent_2":"dice*10",
-         "mortgage":"$75"
+         "mortgage":"$75",
+         "owner":""
         },         
 "pink2":
         {
@@ -183,7 +185,8 @@
          "rent_2":"$50",
          "rent_3":"$100",
          "rent_4":"$200",
-         "mortgage":"$100"
+         "mortgage":"$100",
+         "owner":""
         },          
 "orange1":
         {
@@ -305,7 +308,8 @@
          "rent_2":"$50",
          "rent_3":"$100",
          "rent_4":"$200",
-         "mortgage":"$100"
+         "mortgage":"$100",
+         "owner":""
         },          
 "yellow1":
         {
@@ -362,7 +366,8 @@
          "price":"$150",
          "rent":"dice*4",
          "rent_2":"dice*10",
-         "mortgage":"$75"
+         "mortgage":"$75",
+         "owner":""
         },                  
 "gotojail":
         {
@@ -431,7 +436,8 @@
          "rent_2":"$50",
          "rent_3":"$100",
          "rent_4":"$200",
-         "mortgage":"$100"
+         "mortgage":"$100",
+         "owner":""
         },   
 "chance3":
         {
